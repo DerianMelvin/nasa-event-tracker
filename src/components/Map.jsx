@@ -1,4 +1,5 @@
 import GoogleMapReact from "google-map-react";
+import LocationMarker from "./LocationMarker";
 
 const Map = ({ center, zoom }) => {
   return (
@@ -7,7 +8,9 @@ const Map = ({ center, zoom }) => {
         bootstrapURLKeys={{ key: "AIzaSyBbAzO97ljZOK9HoZoOJFq3eFxx63sDM_A" }}
         defaultCenter={center}
         defaultZoom={zoom}
-      ></GoogleMapReact>
+      >
+        <LocationMarker lat={center.lat} lng={center.lng} />
+      </GoogleMapReact>
     </div>
   );
 };
