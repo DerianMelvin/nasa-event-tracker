@@ -22,3 +22,25 @@ body {
   font-size: 2rem;
   min-height: 100vh;
 }
+
+.location-info {
+  padding: 1rem;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 400px;
+  min-height: 200px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 0.7rem;
+  color: white;
+}
+
+.location-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.location-info li {
+  padding: 5px 0;
+}
