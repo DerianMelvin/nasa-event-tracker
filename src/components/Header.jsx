@@ -1,10 +1,14 @@
 import { Icon } from "@iconify/react";
-import locationIcon from "@iconify/icons-mdi/fire-alert";
+import listIcon from '@iconify/icons-bi/list';
 
 const Header = () => {
   return (
     <header className="header">
-      <h1><Icon icon={locationIcon} /> Event Tracker (Powered by NASA)</h1>
+      <div>
+        <Icon icon={listIcon} className="header-list-icon" />
+      </div>
+      <h1>Event Tracker</h1>
+      <p><em>(Powered by NASA)</em></p>
     </header>
   )
 }
