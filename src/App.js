@@ -7,6 +7,7 @@ import Map from "./components/Map";
 function App() {
   const [eventData, setEventData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [viewEventList, setViewEventList] = useState(false);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -23,10 +24,18 @@ function App() {
     fetchEvents();
   }, []);
 
+  const displayEventList = () => {
+    setViewEventList((prevState) => !prevState);
+  };
+
   return (
     <div>
-      <Header />
-      {!loading ? <Map eventData={eventData} /> : <Loader />}
+      <Header displayEventList={displayEventList} />
+      {!loading ? (
+        <Map eventData={eventData} viewEventList={viewEventList} />
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }

@@ -80,6 +80,10 @@ body {
   margin: 0;
 }
 
+.header-list-button:hover {
+  cursor: pointer;
+}
+
 .header-list-icon {
   font-size: 3rem;
 }

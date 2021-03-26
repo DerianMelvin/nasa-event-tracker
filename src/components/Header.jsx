@@ -1,16 +1,18 @@
 import { Icon } from "@iconify/react";
-import listIcon from '@iconify/icons-bi/list';
+import listIcon from "@iconify/icons-bi/list";
 
-const Header = () => {
+const Header = ({ displayEventList }) => {
   return (
     <header className="header">
-      <div>
+      <div className="header-list-button" onClick={() => displayEventList()}>
         <Icon icon={listIcon} className="header-list-icon" />
       </div>
       <h1>Event Tracker</h1>
-      <p><em>(Powered by NASA)</em></p>
+      <p>
+        <em>(Powered by NASA)</em>
+      </p>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

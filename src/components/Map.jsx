@@ -4,7 +4,7 @@ import LocationMarker from "./LocationMarker";
 import LocationInfoBox from "./LocationInfoBox";
 import EventList from "./EventList";
 
-const Map = ({ eventData, center, zoom }) => {
+const Map = ({ eventData, viewEventList, center, zoom }) => {
   const [locationInfo, setLocationInfo] = useState(null);
   const [currentEvent, setCurrentEvent] = useState(8);
 
@@ -30,7 +30,11 @@ const Map = ({ eventData, center, zoom }) => {
 
   return (
     <div className="map">
-      <EventList adjustEvent={adjustEvent} currentEvent={currentEvent} />
+      {viewEventList ? (
+        <EventList adjustEvent={adjustEvent} currentEvent={currentEvent} />
+      ) : (
+        ""
+      )}
 
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyDEMRNXSoHXfQjxH4mrrsNn_QRR3cqb6oA" }}
