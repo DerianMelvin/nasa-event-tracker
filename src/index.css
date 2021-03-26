@@ -66,8 +66,9 @@ body {
   justify-content: space-between;
 
   color: #fff;
-  background-color: firebrick;
+  background-color: royalblue;
   z-index: 100;
+  user-select: none;
 }
 
 .header h1 {
@@ -91,6 +92,15 @@ body {
 /* EventList.jsx */
 .event-nav-list {
   position: absolute;
-  top: 5rem;
+  top: 3.5rem;
   z-index: 50;
+}
+
+.event-list-item {
+  padding: 1.3rem 2rem 1.3rem 1.3rem;
+}
+
+.list-item-icon {
+  margin-right: 0.5rem;
+  font-size: 1.6rem;
 }
