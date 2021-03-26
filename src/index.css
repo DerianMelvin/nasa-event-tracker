@@ -29,6 +29,10 @@ body {
   color: darkred;
 }
 
+.location-icon:hover {
+  cursor: pointer;
+}
+
 /* LocationInfoBox.jsx */
 .location-info {
   padding: 1rem;
