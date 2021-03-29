@@ -1,14 +1,16 @@
 const LocationInfoBox = ({ info }) => {
   // Remove "Wildfire / Wildfires" from title
-  const regex = /(Wildfires|Wildfire)|[-]/gi;
-  const adjustTitle = info.title.replace(regex, "");
+  const regexTitle = /(Wildfires|Wildfire)|[-]/gi;
+  const adjustTitle = info.title.replace(regexTitle, "");
 
   // List all available sources if 1 or more exist
-  const listSource = info.source.map((data) => {
+  const listSource = info.source.map((data, i) => {
     return (
-      <a href={data.url} target="_blank" rel="noopener noreferrer">
-        {data.id + " "}
-      </a>
+      <li key={i}>
+        <a href={data.url} target="_blank" rel="noopener noreferrer">
+          {data.id}
+        </a>
+      </li>
     );
   });
 
@@ -17,9 +19,13 @@ const LocationInfoBox = ({ info }) => {
       <h2>
         <strong>{adjustTitle}</strong>
       </h2>
+      <h5>
+        <em>ID: {info.id}</em>
+      </h5>
+      <h5>Sources:</h5>
+
       <ul>
-        <li>ID: {info.id}</li>
-        <li>Sources: {listSource} </li>
+        {listSource}
       </ul>
     </div>
   );
