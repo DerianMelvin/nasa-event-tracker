@@ -41,6 +41,10 @@ const Map = ({ eventData, viewEventList, center, zoom }) => {
     return null;
   });
 
+  const adjustLocationInfo = () => {
+    setLocationInfo(null);
+  }
+
   const adjustEvent = (id) => {
     setCurrentEvent(id);
   };
@@ -64,7 +68,7 @@ const Map = ({ eventData, viewEventList, center, zoom }) => {
       </GoogleMapReact>
 
       {/* Display information box of selected location */}
-      {locationInfo && <LocationInfoBox info={locationInfo} />}
+      {locationInfo && <LocationInfoBox info={locationInfo} adjustLocationInfo={adjustLocationInfo} />}
     </div>
   );
 };
