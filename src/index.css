@@ -55,6 +55,31 @@ body {
   padding: 5px 0;
 }
 
+.location-title-group {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#location-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 85%;
+  height: 100%;
+}
+
+#location-close-button {
+  display: flex;
+  align-items: flex-start;
+  font-size: 3.5rem;
+  width: 15%;
+}
+
+#location-close-button:hover {
+  cursor: pointer;
+  color: maroon;
+}
+
 /* Header.jsx */
 .header {
   position: fixed;
