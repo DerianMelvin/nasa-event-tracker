@@ -1,4 +1,7 @@
-const LocationInfoBox = ({ info }) => {
+import { Icon } from "@iconify/react";
+import windowCloseLine from "@iconify/icons-clarity/window-close-line";
+
+const LocationInfoBox = ({ info, adjustLocationInfo }) => {
   // Remove "Wildfire / Wildfires" from title
   const regexTitle = /(Wildfires|Wildfire)|[-]/gi;
   const adjustTitle = info.title.replace(regexTitle, "");
@@ -16,17 +19,21 @@ const LocationInfoBox = ({ info }) => {
 
   return (
     <div className="location-info">
-      <h2>
-        <strong>{adjustTitle}</strong>
-      </h2>
+      <div className="location-title-group">
+        <h2 id="location-title">
+          <strong>{adjustTitle}</strong>
+        </h2>
+        <div id="location-close-button" onClick={() => adjustLocationInfo()}>
+          <Icon icon={windowCloseLine} />
+        </div>
+      </div>
+
       <h5>
         <em>ID: {info.id}</em>
       </h5>
       <h5>Sources:</h5>
 
-      <ul>
-        {listSource}
-      </ul>
+      <ul>{listSource}</ul>
     </div>
   );
 };
