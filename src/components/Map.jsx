@@ -27,6 +27,7 @@ const Map = ({ eventData, viewEventList, center, zoom }) => {
         <LocationMarker
           lat={coordinates[1]}
           lng={coordinates[0]}
+          currentEvent={currentEvent}
           onClick={() =>
             adjustLocationInfo({
               id: data.id,
